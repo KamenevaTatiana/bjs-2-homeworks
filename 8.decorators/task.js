@@ -29,7 +29,7 @@ function debounceDecoratorNew(func, delay) {
     function wrapper(...args) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
-            func(args);
+            func(...args);
             wrapper.count++;
         }, delay);
         if (!isThrottled) {
